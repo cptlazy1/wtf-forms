@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 from datetime import datetime as dt
 from post import Post
 from form import Form, LoginForm
@@ -11,7 +11,7 @@ import secrets
 app = Flask(__name__)
 app.secret_key = secrets.token_urlsafe(16)
 CSRFProtect(app)
-Bootstrap5(app)
+Bootstrap(app)
 
 API_URL = "https://api.npoint.io/8bd73f4fedbaf037a112"
 
