@@ -59,7 +59,10 @@ def login():
         email = form.email.data
         password = form.password.data
         # Add the login logic here
-        return render_template("submit.html", name="User", email=email, password=password, message="Login successful!")
+        if email == "admin@skynet.com" and password == "123456":
+            return render_template("success.html")
+        else:
+            return render_template("denied.html")
     return render_template("login.html", form=form)
 
 @app.context_processor
